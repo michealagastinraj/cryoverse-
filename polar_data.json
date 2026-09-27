@@ -1,0 +1,709 @@
+{
+  "project": "Cryoverse Polar Science & Research Portal",
+  "version": "2.5.0",
+  "lastUpdated": "2026-09-25",
+  "theme": {
+    "primaryNavy": "#070d1e",
+    "deepOcean": "#0a1128",
+    "frostCyan": "#00f2fe",
+    "iceBlue": "#4facfe"
+  },
+  "stations": [
+    {
+      "id": "vostok",
+      "name": "Vostok Station",
+      "region": "Antarctica",
+      "country": "Russia",
+      "flag": "🇷🇺",
+      "location": "Princess Elizabeth Land, Inland East Antarctic Ice Sheet",
+      "coordinates": {
+        "lat": -78.4644,
+        "lng": 106.8372
+      },
+      "elevation": "3,488 m (11,444 ft)",
+      "established": 1957,
+      "managedBy": "Arctic and Antarctic Research Institute (AARI)",
+      "primaryResearch": "Glaciology & Deep Ice Coring, Paleoclimatology, Magnetometry, Subglacial Lake Vostok Studies",
+      "researchCategory": "glaciology",
+      "population": {
+        "summer": 30,
+        "winter": 15
+      },
+      "temperatures": {
+        "annualAverage": "-55.2°C (-67.4°F)",
+        "summerAverage": "-32.0°C (-25.6°F)",
+        "winterAverage": "-68.0°C (-90.4°F)",
+        "recordLow": "-89.2°C (-128.6°F, July 21, 1983 - Official World Record)"
+      },
+      "iceThickness": "3,700 meters over Lake Vostok",
+      "keyDiscoveries": [
+        "Recovered ice cores dating back over 420,000 years revealing 4 glacial-interglacial climate cycles",
+        "Discovered Lake Vostok, a colossal subglacial lake liquid beneath 3.7 km of ice for 15+ million years",
+        "Recorded the coldest surface temperature ever measured directly by humans on Earth (-89.2°C)"
+      ],
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Vostok_Station_2024.png/1280px-Vostok_Station_2024.png",
+      "weather": {
+        "temp": "-64.8°C",
+        "feelsLike": "-78.2°C",
+        "wind": "18 km/h SW",
+        "humidity": "45%",
+        "condition": "Diamond Dust / Deep Polar Freeze",
+        "daylight": "Polar Twilight"
+      }
+    },
+    {
+      "id": "mcmurdo",
+      "name": "McMurdo Station",
+      "region": "Antarctica",
+      "country": "United States",
+      "flag": "🇺🇸",
+      "location": "Hut Point Peninsula, Ross Island, Antarctica",
+      "coordinates": {
+        "lat": -77.8419,
+        "lng": 166.6863
+      },
+      "elevation": "24 m (79 ft)",
+      "established": 1955,
+      "managedBy": "National Science Foundation (United States Antarctic Program - USAP)",
+      "primaryResearch": "Marine Biology, Climate Change, Earth Sciences, Volcanology (Mt. Erebus), Polar Logistics Hub",
+      "researchCategory": "marine biology",
+      "population": {
+        "summer": 1050,
+        "winter": 250
+      },
+      "temperatures": {
+        "annualAverage": "-18.0°C (-0.4°F)",
+        "summerAverage": "-3.0°C (26.6°F)",
+        "winterAverage": "-28.0°C (-18.4°F)",
+        "recordLow": "-50.6°C (-59.1°F)"
+      },
+      "iceThickness": "Coastal volcanic rock adjacent to Ross Ice Shelf",
+      "keyDiscoveries": [
+        "Antarctic fish antifreeze glycoproteins preventing cell freezing in -1.9°C seawater",
+        "Continuous monitoring of active volcano Mount Erebus and its rare persistent phonolitic lava lake",
+        "Anchor logistics facility connecting the South Pole and deep field camps"
+      ],
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/McMurdo_Station_From_The_Top_Of_Observation_Hill.jpg/1280px-McMurdo_Station_From_The_Top_Of_Observation_Hill.jpg",
+      "weather": {
+        "temp": "-16.2°C",
+        "feelsLike": "-26.4°C",
+        "wind": "32 km/h S",
+        "humidity": "62%",
+        "condition": "Brisk Sea Ice Wind",
+        "daylight": "24h Daylight (Summer) / Polar Night (Winter)"
+      }
+    },
+    {
+      "id": "amundsen-scott",
+      "name": "Amundsen-Scott South Pole Station",
+      "region": "Antarctica",
+      "country": "United States",
+      "flag": "🇺🇸",
+      "location": "Geographic South Pole (90°00'S), Antarctic High Plateau",
+      "coordinates": {
+        "lat": -90.0,
+        "lng": 0.0
+      },
+      "elevation": "2,835 m (9,301 ft)",
+      "established": 1956,
+      "managedBy": "National Science Foundation (USAP)",
+      "primaryResearch": "Astrophysics, Cosmology, Cosmic Microwave Background, Neutrino Astronomy (IceCube), Atmospheric Chemistry",
+      "researchCategory": "astrophysics",
+      "population": {
+        "summer": 150,
+        "winter": 50
+      },
+      "temperatures": {
+        "annualAverage": "-49.5°C (-57.1°F)",
+        "summerAverage": "-28.0°C (-18.4°F)",
+        "winterAverage": "-60.0°C (-76.0°F)",
+        "recordLow": "-82.8°C (-117.0°F, June 23, 1982)"
+      },
+      "iceThickness": "2,850 meters of moving glacial ice",
+      "keyDiscoveries": [
+        "IceCube Neutrino Observatory detected high-energy astrophysical neutrinos originating from blazars billions of light-years away",
+        "BICEP and South Pole Telescope (SPT) high-precision polarization maps of the Cosmic Microwave Background",
+        "Unrivaled atmospheric dryness providing the world's premier submillimeter astronomical window"
+      ],
+      "image": "https://upload.wikimedia.org/wikipedia/commons/7/7a/Amundsen-Scott_marsstation_ray_h_edit.jpg",
+      "weather": {
+        "temp": "-52.1°C",
+        "feelsLike": "-65.3°C",
+        "wind": "22 km/h Grid North",
+        "humidity": "38%",
+        "condition": "Ultra-Dry Polar Sky / Sub-Zero Radiance",
+        "daylight": "6-Month Sun / 6-Month Night"
+      }
+    },
+    {
+      "id": "concordia",
+      "name": "Concordia Research Station",
+      "region": "Antarctica",
+      "country": "France / Italy",
+      "flag": "🇫🇷 🇮🇹",
+      "location": "Dome C, East Antarctic Plateau",
+      "coordinates": {
+        "lat": -75.1,
+        "lng": 123.3333
+      },
+      "elevation": "3,233 m (10,607 ft)",
+      "established": 2005,
+      "managedBy": "IPEV (France) & PNRA (Italy) with ESA",
+      "primaryResearch": "Paleoclimatology (EPICA Ice Core), Human Spaceflight Simulation (ESA), Astronomy, Glaciology",
+      "researchCategory": "glaciology",
+      "population": {
+        "summer": 70,
+        "winter": 16
+      },
+      "temperatures": {
+        "annualAverage": "-54.5°C (-66.1°F)",
+        "summerAverage": "-30.0°C (-22.0°F)",
+        "winterAverage": "-65.0°C (-85.0°F)",
+        "recordLow": "-84.6°C (-120.3°F)"
+      },
+      "iceThickness": "3,270 meters over bedrock",
+      "keyDiscoveries": [
+        "EPICA Dome C ice core retrieved the iconic 800,000-year continuous climate and atmospheric CO2 record",
+        "ESA psychological and physiological isolation studies serving as Mars analog habitat testbeds",
+        "Exceptional atmospheric optical stability rivaling space-based telescopes"
+      ],
+      "image": "https://upload.wikimedia.org/wikipedia/commons/b/b7/ConcordiaFromTower.jpg",
+      "weather": {
+        "temp": "-61.4°C",
+        "feelsLike": "-73.0°C",
+        "wind": "15 km/h E",
+        "humidity": "40%",
+        "condition": "Pristine Ice Plateau / Crystal Calm",
+        "daylight": "Continuous Polar Sun / Twilight"
+      }
+    },
+    {
+      "id": "svalbard-nyalesund",
+      "name": "Svalbard Science Centre & Ny-Ålesund",
+      "region": "Arctic",
+      "country": "Norway / International",
+      "flag": "🇳🇴 🌐",
+      "location": "Spitsbergen, Svalbard Archipelago (78°55'N)",
+      "coordinates": {
+        "lat": 78.9244,
+        "lng": 11.9286
+      },
+      "elevation": "10 m (33 ft)",
+      "established": 1968,
+      "managedBy": "Kings Bay AS & UNIS (Hosts international bases including Himadri, AWIPEV)",
+      "primaryResearch": "Climate Change, Arctic Amplification, Atmospheric Aerosols, Marine Fjord Ecology, Svalbard Global Seed Vault",
+      "researchCategory": "climate change",
+      "population": {
+        "summer": 180,
+        "winter": 35
+      },
+      "temperatures": {
+        "annualAverage": "-5.5°C (22.1°F)",
+        "summerAverage": "+5.2°C (41.4°F)",
+        "winterAverage": "-14.0°C (6.8°F)",
+        "recordLow": "-42.2°C (-44.0°F)"
+      },
+      "iceThickness": "Surrounded by tidewater glaciers (Kronebreen) and marine fjords",
+      "keyDiscoveries": [
+        "Observed Arctic Amplification warming rates up to 4x the global planetary mean",
+        "Svalbard Global Seed Vault preserving >1.2 million agricultural crop seed accessions at -18°C in permafrost",
+        "Long-term decadal marine biogeochemistry tracking Atlantic water intrusion through Fram Strait"
+      ],
+      "image": "https://upload.wikimedia.org/wikipedia/commons/0/0b/Ny-Alesund_%28js%29_2.jpg",
+      "weather": {
+        "temp": "-7.5°C",
+        "feelsLike": "-13.8°C",
+        "wind": "24 km/h NNW",
+        "humidity": "79%",
+        "condition": "Fjord Frost / Polar Dusk",
+        "daylight": "Polar Twilight"
+      }
+    },
+    {
+      "id": "himadri",
+      "name": "Himadri Station",
+      "region": "Arctic",
+      "country": "India",
+      "flag": "🇮🇳",
+      "location": "Ny-Ålesund, Spitsbergen, Svalbard, Norway",
+      "coordinates": {
+        "lat": 78.9244,
+        "lng": 11.9286
+      },
+      "elevation": "10 m (33 ft)",
+      "established": 2008,
+      "managedBy": "National Centre for Polar and Ocean Research (NCPOR), Ministry of Earth Sciences",
+      "primaryResearch": "Aerosols & Black Carbon, Fjord Glaciology, Arctic-Indian Monsoon Teleconnections, Cryophilic Genomics",
+      "researchCategory": "climate change",
+      "population": {
+        "summer": 12,
+        "winter": 4
+      },
+      "temperatures": {
+        "annualAverage": "-6.0°C (21.2°F)",
+        "summerAverage": "+5.0°C (41.0°F)",
+        "winterAverage": "-15.0°C (5.0°F)",
+        "recordLow": "-36.5°C (-33.7°F)"
+      },
+      "iceThickness": "Proximity to Kongsbreen and Kronebreen glacial systems",
+      "keyDiscoveries": [
+        "Uncovered atmospheric Rossby wave teleconnections linking Barents-Kara sea-ice reduction with Indian Monsoon delays",
+        "Isolated novel psychrophilic cold-active bacterial enzymes with industrial biotechnology applications",
+        "Coupled underwater observations with the IndARC mooring (192m deep) in Kongsfjorden"
+      ],
+      "image": "https://upload.wikimedia.org/wikipedia/commons/0/0b/Ny-Alesund_%28js%29_2.jpg",
+      "weather": {
+        "temp": "-8.4°C",
+        "feelsLike": "-14.2°C",
+        "wind": "28 km/h NNW",
+        "humidity": "82%",
+        "condition": "Polar Twilight / Light Flurries",
+        "daylight": "24h Polar Night / Midnight Sun"
+      }
+    },
+    {
+      "id": "rothera",
+      "name": "Rothera Research Station",
+      "region": "Antarctica",
+      "country": "United Kingdom",
+      "flag": "🇬🇧",
+      "location": "Rothera Point, Adelaide Island, Antarctic Peninsula",
+      "coordinates": {
+        "lat": -67.57,
+        "lng": -68.125
+      },
+      "elevation": "16 m (52 ft)",
+      "established": 1975,
+      "managedBy": "British Antarctic Survey (BAS)",
+      "primaryResearch": "Marine Biology, Climate Change, Glaciology, Aviation & Logistic Gateway, Bonner Marine Lab",
+      "researchCategory": "marine biology",
+      "population": {
+        "summer": 130,
+        "winter": 22
+      },
+      "temperatures": {
+        "annualAverage": "-5.3°C (22.5°F)",
+        "summerAverage": "+1.5°C (34.7°F)",
+        "winterAverage": "-11.0°C (12.2°F)",
+        "recordLow": "-39.3°C (-38.7°F)"
+      },
+      "iceThickness": "Coastal marine point backed by the Adelaide Island ice cap",
+      "keyDiscoveries": [
+        "Discovered rapid benthic ecosystem changes in Ryder Bay following warming and ice shelf collapse",
+        "Monitors the fastest-warming maritime sector of Antarctica along the Antarctic Peninsula",
+        "Operates the modernized Discovery Building and 900m gravel runway connecting deep-field science missions"
+      ],
+      "image": "https://upload.wikimedia.org/wikipedia/commons/0/01/BAS_Rothera.jpg",
+      "weather": {
+        "temp": "-3.8°C",
+        "feelsLike": "-9.2°C",
+        "wind": "25 km/h NW",
+        "humidity": "85%",
+        "condition": "Maritime Coastal Overcast",
+        "daylight": "Midsummer Extended Daylight"
+      }
+    },
+    {
+      "id": "halley-vi",
+      "name": "Halley VI Research Station",
+      "region": "Antarctica",
+      "country": "United Kingdom",
+      "flag": "🇬🇧",
+      "location": "Brunt Ice Shelf, Weddell Sea, Antarctica",
+      "coordinates": {
+        "lat": -75.58,
+        "lng": -25.5
+      },
+      "elevation": "35 m on floating ice shelf",
+      "established": 2012,
+      "managedBy": "British Antarctic Survey (BAS)",
+      "primaryResearch": "Atmospheric Chemistry, Ozone Hole Monitoring, Space Weather, Geomagnetism",
+      "researchCategory": "astrophysics",
+      "population": {
+        "summer": 70,
+        "winter": 0
+      },
+      "temperatures": {
+        "annualAverage": "-18.9°C (-2.0°F)",
+        "summerAverage": "-4.5°C (23.9°F)",
+        "winterAverage": "-32.0°C (-25.6°F)",
+        "recordLow": "-55.3°C (-67.5°F)"
+      },
+      "iceThickness": "Built on 150-meter-thick floating Brunt Ice Shelf",
+      "keyDiscoveries": [
+        "First discovery of the Antarctic Ozone Hole in 1985 using ground Dobson spectrophotometers",
+        "World's first fully relocatable polar station built on hydraulic stilts mounted on giant skis",
+        "Relocated 23 km inland in 2017 using bulldozers to evade widening ice chasm rifts (Chasm 1)"
+      ],
+      "image": "https://upload.wikimedia.org/wikipedia/commons/4/41/Halley_VI_Antarctic_Research_Station_-_Science_modules.jpg",
+      "weather": {
+        "temp": "-21.5°C",
+        "feelsLike": "-32.0°C",
+        "wind": "35 km/h E",
+        "humidity": "72%",
+        "condition": "Drifting Ice Crystals / Shelf Winds",
+        "daylight": "24h Polar Sunlight"
+      }
+    },
+    {
+      "id": "maitri",
+      "name": "Maitri Research Station",
+      "region": "Antarctica",
+      "country": "India",
+      "flag": "🇮🇳",
+      "location": "Schirmacher Oasis, Queen Maud Land, East Antarctica",
+      "coordinates": {
+        "lat": -70.7658,
+        "lng": 11.7348
+      },
+      "elevation": "130 m (427 ft)",
+      "established": 1989,
+      "managedBy": "National Centre for Polar and Ocean Research (NCPOR)",
+      "primaryResearch": "Geomagnetism, Lake Priyadarshini Limnology, Paleoclimate Ice Cores, Human Polar Adaptation",
+      "researchCategory": "climate change",
+      "population": {
+        "summer": 65,
+        "winter": 25
+      },
+      "temperatures": {
+        "annualAverage": "-9.5°C (14.9°F)",
+        "summerAverage": "+1.8°C (35.2°F)",
+        "winterAverage": "-20.5°C (-4.9°F)",
+        "recordLow": "-40.0°C (-40.0°F)"
+      },
+      "iceThickness": "Rocky oasis free of continental ice, bordered by inland ice sheet and coastal shelf",
+      "keyDiscoveries": [
+        "Continuous 35+ year meteorological and geomagnetic time series in East Antarctica",
+        "Pioneering microbial ecology research in freshwater Lake Priyadarshini",
+        "Seismic observations recording global teleseismic earthquake wavefronts across the polar plate"
+      ],
+      "image": "https://upload.wikimedia.org/wikipedia/commons/4/4d/An_aerial_view_of_the_Indian_Station_Maitri%2C_Antarctica_on_February_2%2C_2005.jpg",
+      "weather": {
+        "temp": "-18.6°C",
+        "feelsLike": "-27.1°C",
+        "wind": "42 km/h SE",
+        "humidity": "64%",
+        "condition": "Brisk Blizzard / Clear Ice Horizon",
+        "daylight": "Continuous Midnight Sun"
+      }
+    },
+    {
+      "id": "bharati",
+      "name": "Bharati Research Station",
+      "region": "Antarctica",
+      "country": "India",
+      "flag": "🇮🇳",
+      "location": "Larsemann Hills, East Antarctica",
+      "coordinates": {
+        "lat": -69.4072,
+        "lng": 76.1908
+      },
+      "elevation": "35 m (115 ft)",
+      "established": 2012,
+      "managedBy": "National Centre for Polar and Ocean Research (NCPOR)",
+      "primaryResearch": "Oceanography (Prydz Bay), Gondwana Supercontinent Tectonics, ISRO Earth Observation Telemetry",
+      "researchCategory": "astrophysics",
+      "population": {
+        "summer": 75,
+        "winter": 24
+      },
+      "temperatures": {
+        "annualAverage": "-10.0°C (14.0°F)",
+        "summerAverage": "+2.5°C (36.5°F)",
+        "winterAverage": "-22.0°C (-7.6°F)",
+        "recordLow": "-38.0°C (-36.4°F)"
+      },
+      "iceThickness": "Aerodynamic stilted structure erected over granite bedrock hills",
+      "keyDiscoveries": [
+        "State-of-the-art building made of 134 shipping containers resisting 300 km/h katabatic winds",
+        "Critical satellite telemetry station for ISRO's Indian Remote Sensing (IRS) polar orbiting satellites",
+        "Marine sediment coring detailing the separation of India and Antarctica 120 million years ago"
+      ],
+      "image": "https://upload.wikimedia.org/wikipedia/commons/3/3a/Bharati_permanent_Antarctic_research_station.jpg",
+      "weather": {
+        "temp": "-12.1°C",
+        "feelsLike": "-21.5°C",
+        "wind": "36 km/h ENE",
+        "humidity": "71%",
+        "condition": "Pristine Ice Glare / Katabatic Gusts",
+        "daylight": "24h Polar Day"
+      }
+    },
+    {
+      "id": "summit-station",
+      "name": "Summit Station",
+      "region": "Arctic",
+      "country": "United States",
+      "flag": "🇺🇸",
+      "location": "Apex of the Greenland Ice Sheet",
+      "coordinates": {
+        "lat": 72.58,
+        "lng": -38.45
+      },
+      "elevation": "3,216 m (10,551 ft)",
+      "established": 1989,
+      "managedBy": "National Science Foundation (NSF)",
+      "primaryResearch": "Deep Ice Cores (GISP2), Atmospheric Chemistry, Boundary Layer Meteorology, Greenland Mass Loss",
+      "researchCategory": "glaciology",
+      "population": {
+        "summer": 45,
+        "winter": 5
+      },
+      "temperatures": {
+        "annualAverage": "-31.5°C (-24.7°F)",
+        "summerAverage": "-11.0°C (12.2°F)",
+        "winterAverage": "-45.0°C (-49.0°F)",
+        "recordLow": "-63.3°C (-81.9°F)"
+      },
+      "iceThickness": "3,053 meters of continental ice sheet",
+      "keyDiscoveries": [
+        "GISP2 ice core providing 110,000-year chronology of Dansgaard-Oeschger rapid warming events",
+        "Documented unprecedented Greenland ice sheet surface melt events reaching the summit apex",
+        "Global baseline station for Northern Hemisphere atmospheric greenhouse gases"
+      ],
+      "image": "https://upload.wikimedia.org/wikipedia/commons/0/0a/Summit_Camp_Big_House.JPG",
+      "weather": {
+        "temp": "-34.2°C",
+        "feelsLike": "-46.0°C",
+        "wind": "20 km/h W",
+        "humidity": "50%",
+        "condition": "High-Altitude Snow Plateau",
+        "daylight": "Sun Above Horizon"
+      }
+    },
+    {
+      "id": "princess-elisabeth",
+      "name": "Princess Elisabeth Antarctica",
+      "region": "Antarctica",
+      "country": "Belgium",
+      "flag": "🇧🇪",
+      "location": "Utsteinen Nunatak, Queen Maud Land",
+      "coordinates": {
+        "lat": -71.9499,
+        "lng": 23.3475
+      },
+      "elevation": "1,397 m (4,583 ft)",
+      "established": 2009,
+      "managedBy": "International Polar Foundation (IPF)",
+      "primaryResearch": "Zero-Emission Polar Architecture, Glaciology, Meteorites, Aerobiology, Solar/Wind Hybrid Microgrids",
+      "researchCategory": "climate change",
+      "population": {
+        "summer": 40,
+        "winter": 0
+      },
+      "temperatures": {
+        "annualAverage": "-24.0°C (-11.2°F)",
+        "summerAverage": "-8.0°C (17.6°F)",
+        "winterAverage": "-38.0°C (-36.4°F)",
+        "recordLow": "-50.0°C (-58.0°F)"
+      },
+      "iceThickness": "Anchored to exposed granite ridge surrounded by deep ice sheet",
+      "keyDiscoveries": [
+        "First certified zero-emission station powered 100% by solar panels and wind turbines",
+        "Recovery of rare pristine meteorites preserved on the blue ice fields of Queen Maud Land",
+        "Pioneering closed-cycle greywater and blackwater bacterial treatment systems in sub-zero climates"
+      ],
+      "image": "https://upload.wikimedia.org/wikipedia/commons/b/bd/1062_Princess-Elizabethbasis_Antarctica.jpg",
+      "weather": {
+        "temp": "-14.5°C",
+        "feelsLike": "-23.0°C",
+        "wind": "30 km/h ESE",
+        "humidity": "55%",
+        "condition": "Wind Powered Clean Sky",
+        "daylight": "24h Solar Exposure"
+      }
+    }
+  ],
+  "climateDatasets": {
+    "iceCoreCO2": {
+      "title": "Historical Ice-Core Atmospheric CO2 Concentration (800,000 BP to Present)",
+      "description": "Continuous atmospheric CO2 samples extracted from air bubbles trapped inside EPICA Dome C & Vostok Antarctic ice cores, juxtaposed against modern instrumental Mauna Loa and polar baseline sensors.",
+      "unit": "Parts Per Million (ppm)",
+      "source": "EPICA / NOAA / NASA GISTEMP / NCPOR Cryo-Archives",
+      "timeline": [
+        {
+          "period": "800,000 BCE",
+          "co2": 192,
+          "era": "Mid-Pleistocene Glacial Maximum",
+          "notes": "Deep ice core bubble equilibrium"
+        },
+        {
+          "period": "600,000 BCE",
+          "co2": 260,
+          "era": "Interglacial Warm Peak",
+          "notes": "Natural cyclical boundary"
+        },
+        {
+          "period": "400,000 BCE",
+          "co2": 280,
+          "era": "Marine Isotope Stage 11",
+          "notes": "Prolonged interglacial analogue"
+        },
+        {
+          "period": "200,000 BCE",
+          "co2": 185,
+          "era": "Penultimate Glacial Maximum",
+          "notes": "Severe cooling cycle"
+        },
+        {
+          "period": "125,000 BCE",
+          "co2": 290,
+          "era": "Eemian Interglacial",
+          "notes": "Global sea levels were 6-9m higher"
+        },
+        {
+          "period": "20,000 BCE",
+          "co2": 180,
+          "era": "Last Glacial Maximum (LGM)",
+          "notes": "Global ice sheets peak"
+        },
+        {
+          "period": "1850 CE",
+          "co2": 284,
+          "era": "Pre-Industrial Baseline",
+          "notes": "Stable Holocene range (260-280 ppm)"
+        },
+        {
+          "period": "1960 CE",
+          "co2": 317,
+          "era": "Early Industrial Acceleration",
+          "notes": "Keeling Curve inception"
+        },
+        {
+          "period": "1990 CE",
+          "co2": 354,
+          "era": "Global Satellite Era",
+          "notes": "Rapid industrial expansion"
+        },
+        {
+          "period": "2010 CE",
+          "co2": 390,
+          "era": "Approaching 400 ppm Threshold",
+          "notes": "First Arctic stations cross 400 ppm"
+        },
+        {
+          "period": "2024 CE",
+          "co2": 425,
+          "era": "Modern Anthropocene Peak",
+          "notes": "50% higher than pre-industrial baseline"
+        }
+      ]
+    },
+    "seaIceExtent": {
+      "title": "Polar Sea-Ice Extent Decadal Trends (1979 - 2024)",
+      "description": "Satellite passive microwave sensor measurements tracking the annual minimum sea-ice coverage (Arctic September minimum) and Antarctic sea-ice variations.",
+      "unit": "Million Square Kilometers (M km²)",
+      "source": "National Snow and Ice Data Center (NSIDC) & NCPOR Satellite Registry",
+      "records": [
+        {
+          "year": 1979,
+          "arcticMin": 7.5,
+          "antarcticMax": 18.8,
+          "notes": "Beginning of continuous satellite observational record"
+        },
+        {
+          "year": 1985,
+          "arcticMin": 6.95,
+          "antarcticMax": 18.6,
+          "notes": "Multi-year thick ice constitutes >45% of Arctic pack"
+        },
+        {
+          "year": 1995,
+          "arcticMin": 6.12,
+          "antarcticMax": 19.1,
+          "notes": "Early signs of Arctic sea-ice thinning"
+        },
+        {
+          "year": 2005,
+          "arcticMin": 5.5,
+          "antarcticMax": 19.2,
+          "notes": "Major downward shift in Arctic summer extent"
+        },
+        {
+          "year": 2012,
+          "arcticMin": 3.39,
+          "antarcticMax": 19.45,
+          "notes": "All-time historic Arctic minimum following powerful summer cyclone"
+        },
+        {
+          "year": 2018,
+          "arcticMin": 4.59,
+          "antarcticMax": 18.15,
+          "notes": "Antarctic sea ice shifts from stable/growing to sharp decline"
+        },
+        {
+          "year": 2020,
+          "arcticMin": 3.82,
+          "antarcticMax": 18.9,
+          "notes": "Second lowest Arctic minimum on record"
+        },
+        {
+          "year": 2023,
+          "arcticMin": 4.23,
+          "antarcticMax": 16.96,
+          "notes": "Unprecedented record low Antarctic winter maximum (1.5M km² below average)"
+        },
+        {
+          "year": 2024,
+          "arcticMin": 4.28,
+          "antarcticMax": 17.05,
+          "notes": "Persistent polar multi-year ice depletion confirmed"
+        }
+      ]
+    },
+    "glacierMeltSpeeds": {
+      "title": "Major Polar & Benchmark Glacier Velocity & Retreat Dynamics",
+      "description": "Ground Penetrating Radar, satellite InSAR, and GPS tracking of calving speeds, mass loss, and grounding line retreat across Greenland, Antarctica, and the Himalayas.",
+      "glaciers": [
+        {
+          "name": "Jakobshavn Isbræ (Sermeq Kujalleq)",
+          "region": "West Greenland (Arctic)",
+          "velocity": "45 meters / day (16 km/year)",
+          "status": "Fastest flowing outlet glacier on Earth; major contributor to global sea level rise",
+          "retreatRate": "-3.5 km per decade",
+          "mechanism": "Deep ocean warm Atlantic water intrusion destabilizing marine grounding line"
+        },
+        {
+          "name": "Thwaites Glacier ('Doomsday Glacier')",
+          "region": "Amundsen Sea, West Antarctica",
+          "velocity": "2.5 to 3.2 km / year",
+          "status": "Critical vulnerability; holds potential to trigger 65 cm direct sea level rise and 3m regional collapse",
+          "retreatRate": "-1.1 km grounding line retreat / year",
+          "mechanism": "Circumpolar Deep Water (CDW) melting the underside of the floating ice tongue"
+        },
+        {
+          "name": "Pine Island Glacier (PIG)",
+          "region": "West Antarctica",
+          "velocity": "4.0 km / year",
+          "status": "Rapid acceleration and calving of colossal tabular icebergs (B-46, B-49)",
+          "retreatRate": "-1.8 km / year",
+          "mechanism": "Bedrock reverse slope allowing runaway marine ice sheet instability (MISI)"
+        },
+        {
+          "name": "Bara Shigri Glacier",
+          "region": "Chandra Basin, Himalayas (Third Pole)",
+          "velocity": "28 meters / year",
+          "status": "Long-term monitored benchmark glacier tracked by Himansh station",
+          "retreatRate": "-25 to -30 meters / year",
+          "mechanism": "Anthropogenic black carbon lowering surface albedo combined with rising alpine temperatures"
+        }
+      ]
+    },
+    "auroraDynamics": {
+      "title": "Auroral Oval & Geomagnetic Dynamics (Borealis & Australis)",
+      "description": "Real-time and statistical metrics of space weather interactions between coronal mass ejections (CMEs) and the Earth's polar magnetic cusps.",
+      "parameters": {
+        "solarWindSpeed": "400 - 850 km/s",
+        "interplanetaryMagneticField": "Bz component orientation (Southward coupling triggers geomagnetic sub-storms)",
+        "auroraZones": "Arctic Auroral Zone (65°-72°N: Tromsø, Svalbard, Fairbanks) & Antarctic Zone (65°-70°S: Maitri, Bharati, Halley VI)",
+        "kpIndexScale": "0 to 9 planetary disturbance rating (Kp >= 5 indicates geomagnetic storm)",
+        "excitationAltitude": "Green light (557.7 nm) from Atomic Oxygen at 100-150 km; Crimson Red (630.0 nm) at 200-300 km; Blue/Violet (427.8 nm) from Ionized Nitrogen at 80-100 km"
+      },
+      "observatories": [
+        "Maitri & Bharati: Dual riometers and induction coil magnetometers monitoring auroral electrojets",
+        "Amundsen-Scott: Optical spectrometers at the Geographic South Pole during 6-month continuous darkness",
+        "Ny-Ålesund: Rocket sounding launches into the Arctic daytime auroral cusp"
+      ]
+    }
+  }
+}

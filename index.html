@@ -1,0 +1,564 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cryoverse | Polar Science & Knowledge Portal</title>
+  <meta name="description" content="Cryoverse is an interactive polar science knowledge platform featuring Indian and global research stations (Himadri, Maitri, Bharati, Himansh), datasets, interactive satellite maps, and an intelligent Polar AI Assistant.">
+  
+  <!-- Leaflet CSS for Interactive Attractive Map -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin=""/>
+  
+  <!-- Main Stylesheet -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ================= NAVBAR ================= -->
+  <header class="navbar">
+    <a href="#home" class="logo" aria-label="Cryoverse Homepage"><span class="logo-icon">❄️</span><span class="logo-text">CRYO<span>VERSE</span></span></a>
+    <nav>
+      <a href="#home">Home</a>
+      <a href="#explore">Explore</a>
+      <a href="#stations">Stations & Map</a>
+      <a href="#climate-datasets">Climate Datasets</a>
+      <a href="#research">Research</a>
+      <a href="#knowledge">Knowledge Hub</a>
+      <a href="#audience">Portals</a>
+      <a href="#students">Student Zone</a>
+      <a href="#ai">Cryo AI</a>
+    </nav>
+    <button class="menu-btn" onclick="toggleMenu()" aria-label="Toggle Navigation Menu">☰</button>
+  </header>
+
+  <!-- ================= HERO ================= -->
+  <section class="hero" id="home">
+    <div class="hero-content">
+      <p class="tag">CRYOVERSE • POLAR SCIENCE PORTAL</p>
+      <h1>
+        Explore the
+        <br>
+        <span>Frozen World</span>
+      </h1>
+      <p class="hero-description">
+        Discover polar science, climate research, expeditions,
+        scientific knowledge and educational resources
+        through one connected platform.
+      </p>
+      <div class="hero-buttons">
+        <a href="#explore" class="primary-btn">
+          Explore Polar World →
+        </a>
+        <a href="#audience" class="secondary-btn">
+          Choose Your Portal
+        </a>
+      </div>
+    </div>
+
+    <div class="hero-globe">
+      <div class="orbit orbit1"></div>
+      <div class="orbit orbit2"></div>
+      <div class="earth">
+        🌍
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= STATS ================= -->
+  <section class="stats">
+    <div onclick="showRegion('Arctic')" style="cursor: pointer;" title="Click to view polar regions">
+      <strong>4</strong>
+      <p>Polar Regions</p>
+    </div>
+    <div onclick="cryoMap.focusRegion('world')" style="cursor: pointer;" title="Click to view stations on map">
+      <strong>6+</strong>
+      <p>Research Stations & Moorings</p>
+    </div>
+    <div onclick="document.getElementById('research').scrollIntoView({behavior:'smooth'})" style="cursor: pointer;" title="Click to explore research repository">
+      <strong>50+</strong>
+      <p>Research Areas & Datasets</p>
+    </div>
+    <div onclick="document.getElementById('ai').scrollIntoView({behavior:'smooth'})" style="cursor: pointer;" title="Click to ask Cryo AI">
+      <strong>Cryo AI</strong>
+      <p>Polar Science Assistant</p>
+    </div>
+  </section>
+
+  <!-- ================= EXPLORE ================= -->
+  <section class="section" id="explore">
+    <div class="section-title">
+      <p>EXPLORE</p>
+      <h2>The Cryoverse</h2>
+      <span>
+        Discover Earth's frozen regions and understand
+        how they connect with climate, oceans and life.
+      </span>
+    </div>
+
+    <div class="region-grid">
+      <div class="region-card">
+        <div class="region-icon">❄️</div>
+        <h3>Arctic</h3>
+        <p>
+          Explore Arctic climate, glaciers, oceans,
+          atmosphere and polar ecosystems.
+        </p>
+        <button onclick="showRegion('Arctic')">
+          Explore →
+        </button>
+      </div>
+
+      <div class="region-card">
+        <div class="region-icon">🧊</div>
+        <h3>Antarctica</h3>
+        <p>
+          Discover Antarctic research, ice sheets,
+          expeditions, climate and ecosystems.
+        </p>
+        <button onclick="showRegion('Antarctica')">
+          Explore →
+        </button>
+      </div>
+
+      <div class="region-card">
+        <div class="region-icon">🌊</div>
+        <h3>Southern Ocean</h3>
+        <p>
+          Learn about ocean circulation, marine ecosystems
+          and connections to global climate.
+        </p>
+        <button onclick="showRegion('Southern Ocean')">
+          Explore →
+        </button>
+      </div>
+
+      <div class="region-card">
+        <div class="region-icon">🏔️</div>
+        <h3>Himalaya</h3>
+        <p>
+          Explore glaciers, snow, cryosphere and
+          Himalayan climate research.
+        </p>
+        <button onclick="showRegion('Himalaya')">
+          Explore →
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= MAP & STATIONS ================= -->
+  <section class="map-section" id="stations">
+    <div class="section-title">
+      <p>INTERACTIVE DUAL-POLE CARTOGRAPHY</p>
+      <h2>Polar Research Stations & Observatories</h2>
+      <span>
+        Explore scientific research stations across the Arctic & Antarctic poles (Vostok, McMurdo, Amundsen-Scott, Concordia, Svalbard, Rothera, Halley VI, Himadri, Maitri, Bharati) with live telemetry, ice-contour coordinates, and discipline filters.
+      </span>
+    </div>
+
+    <!-- Map Quick Navigation & Layers Toolbar -->
+    <div class="map-toolbar">
+      <div class="map-controls-group">
+        <button class="map-btn map-quiz-launch-btn" onclick="startStationQuiz()">🎯 Station Map Quiz (8 Challenges)</button>
+        <button class="map-btn map-view-btn active" data-region="world" onclick="cryoMap.focusRegion('world')">🌐 Global Dual-Pole View</button>
+        <button class="map-btn map-view-btn" data-region="arctic" onclick="cryoMap.focusRegion('arctic')">❄️ Arctic Pole View (90°N)</button>
+        <button class="map-btn map-view-btn" data-region="antarctica" onclick="cryoMap.focusRegion('antarctica')">🧊 Antarctic Pole View (90°S)</button>
+        <button class="map-btn map-view-btn" data-region="himalaya" onclick="cryoMap.focusRegion('himalaya')">🏔️ Third Pole (Himalaya)</button>
+      </div>
+
+      <div class="map-controls-group">
+        <button id="toggleGridBtn" class="map-btn active" onclick="cryoMap.togglePolarGrid()" title="Toggle Polar Circles and Latitude Contours">🌐 Polar Circles & Contours</button>
+        <button class="map-btn map-tile-btn active" data-layer="satellite" onclick="cryoMap.switchTileLayer('satellite')">🌍 Real Earth Satellite</button>
+        <button class="map-btn map-tile-btn" data-layer="ocean" onclick="cryoMap.switchTileLayer('ocean')">🌊 Deep Ocean & Ice</button>
+        <button class="map-btn map-tile-btn" data-layer="streets" onclick="cryoMap.switchTileLayer('streets')">🗺️ OpenStreetMap</button>
+      </div>
+
+      <div id="mapCoordsIndicator" class="map-coords-badge">
+        <strong>LAT:</strong> -- | <strong>LNG:</strong> --
+      </div>
+    </div>
+
+    <!-- Domain Filter Row for Map -->
+    <div class="map-domain-filter-bar">
+      <span class="filter-label">Filter Stations by Discipline:</span>
+      <button class="domain-filter-btn active" data-domain="all" onclick="cryoMap.filterByDomain('all')">All Disciplines</button>
+      <button class="domain-filter-btn" data-domain="glaciology" onclick="cryoMap.filterByDomain('glaciology')">🧊 Glaciology & Ice Cores</button>
+      <button class="domain-filter-btn" data-domain="astrophysics" onclick="cryoMap.filterByDomain('astrophysics')">🌌 Astrophysics & Space</button>
+      <button class="domain-filter-btn" data-domain="climate change" onclick="cryoMap.filterByDomain('climate change')">🌡️ Climate & Warming</button>
+      <button class="domain-filter-btn" data-domain="marine biology" onclick="cryoMap.filterByDomain('marine biology')">🦭 Marine Biology</button>
+    </div>
+
+    <!-- Interactive Leaflet Map Container with Polar Background Styling -->
+    <div class="polar-map-wrapper">
+      <div class="polar-contour-bg-grid"></div>
+      <div id="mapContainer"></div>
+    </div>
+
+    <!-- Station Cards Directory Header & Search -->
+    <div class="station-search-row">
+      <div class="station-search-box">
+        <input 
+          type="text" 
+          id="stationSearchInput" 
+          placeholder="🔎 Search polar stations by name, country, or scientific field..." 
+          onkeyup="renderStationCards(cryoMap.activeDomainFilter, this.value)"
+        >
+      </div>
+      <div class="station-quick-filters">
+        <button class="sq-btn active" onclick="document.querySelectorAll('.sq-btn').forEach(b=>b.classList.remove('active')); this.classList.add('active'); renderStationCards('all', document.getElementById('stationSearchInput').value)">All</button>
+        <button class="sq-btn" onclick="document.querySelectorAll('.sq-btn').forEach(b=>b.classList.remove('active')); this.classList.add('active'); renderStationCards('Arctic', document.getElementById('stationSearchInput').value)">Arctic Stations</button>
+        <button class="sq-btn" onclick="document.querySelectorAll('.sq-btn').forEach(b=>b.classList.remove('active')); this.classList.add('active'); renderStationCards('Antarctica', document.getElementById('stationSearchInput').value)">Antarctica Stations</button>
+      </div>
+    </div>
+
+    <!-- Interactive Station Cards Grid (Populated dynamically from data.js / polar_data.json) -->
+    <div class="station-grid" id="stationGrid">
+      <!-- Populated dynamically by renderStationCards() -->
+    </div>
+  </section>
+
+  <!-- ================= POLAR CLIMATE DATASETS EXPLORER ================= -->
+  <section class="section climate-datasets-section" id="climate-datasets">
+    <div class="section-title">
+      <p>EXPANDED SCIENTIFIC DATASETS</p>
+      <h2>Polar Climate Datasets & Dynamics</h2>
+      <span>
+        Explore historical ice-core CO2 records (800,000 BP to present), satellite sea-ice extent trends, glacier melt speeds, and aurora space-weather coupling from authoritative polar archives.
+      </span>
+    </div>
+
+    <div id="climateDatasetsContainer" class="climate-datasets-wrapper">
+      <!-- Populated dynamically by renderClimateDatasetsExplorer() -->
+    </div>
+  </section>
+
+  <!-- ================= RESEARCH ================= -->
+  <section class="section" id="research">
+    <div class="section-title">
+      <p>KNOWLEDGE REPOSITORY</p>
+      <h2>Polar Research</h2>
+      <span>
+        Search and explore peer-reviewed polar science research, findings, and publications.
+      </span>
+    </div>
+
+    <div class="research-tools">
+      <input
+        type="text"
+        id="searchInput"
+        placeholder="🔎 Search research papers, topics, authors, or DOI..."
+        onkeyup="searchResearch()"
+      >
+
+      <select id="regionFilter" onchange="searchResearch()">
+        <option value="All">All Regions</option>
+        <option value="Arctic">Arctic</option>
+        <option value="Antarctica">Antarctica</option>
+        <option value="Southern Ocean">Southern Ocean</option>
+        <option value="Himalaya">Himalaya</option>
+      </select>
+    </div>
+
+    <div class="research-grid" id="researchGrid">
+      <!-- Populated dynamically from data.js & database.js -->
+    </div>
+  </section>
+
+  <!-- ================= KNOWLEDGE HUB ================= -->
+  <section class="knowledge" id="knowledge">
+    <div class="knowledge-content">
+      <p class="tag">KNOWLEDGE HUB</p>
+      <h2>Understand Polar Science</h2>
+      <p>
+        Complex scientific concepts explained simply
+        for students, teachers, researchers and the public.
+      </p>
+
+      <div class="knowledge-list">
+        <div onclick="openGlossaryModal()" style="cursor: pointer; border-color: rgba(0, 240, 255, 0.4);">
+          <strong>📚 A-Z Polar Science Glossary (16 Terms)</strong>
+          <span>
+            Comprehensive definitions of Albedo, GLOF, Katabatic Winds, Polynyas, Psychrophiles, and more.
+          </span>
+        </div>
+
+        <div onclick="showRegion('Arctic')" style="cursor: pointer;">
+          <strong>❄️ Cryosphere</strong>
+          <span>
+            Understand Earth's frozen regions, ice sheets, and permafrost dynamics.
+          </span>
+        </div>
+
+        <div onclick="showIceAlbedoDemo()" style="cursor: pointer;">
+          <strong>🌡️ Climate & Ice-Albedo Effect</strong>
+          <span>
+            Learn how melting snow alters solar reflectivity and planetary heat balance.
+          </span>
+        </div>
+
+        <div onclick="showRegion('Southern Ocean')" style="cursor: pointer;">
+          <strong>🌊 Polar Ocean Systems</strong>
+          <span>
+            Explore deep water formation, thermohaline circulation, and krill food webs.
+          </span>
+        </div>
+      </div>
+    </div>
+
+    <div class="ice" onclick="showIceAlbedoDemo()" style="cursor: pointer;" title="Click to test Ice-Albedo simulator">
+      🧊
+    </div>
+  </section>
+
+  <!-- ================= USER PORTALS ================= -->
+  <section class="section portals" id="audience">
+    <div class="section-title">
+      <p>CRYOVERSE PORTALS</p>
+      <h2>Choose Your Learning Experience</h2>
+      <span>
+        Cryoverse provides dedicated tools, datasets, flashcards and lesson plans
+        for students, teachers, scientists and the public.
+      </span>
+    </div>
+
+    <div class="portal-grid">
+      <!-- STUDENT -->
+      <div class="portal-card student-portal">
+        <div class="portal-icon">🎓</div>
+        <span class="portal-label">FOR STUDENTS</span>
+        <h3>Student Explorer</h3>
+        <p>
+          Learn polar science through simple explanations,
+          interactive activities, quizzes and career resources.
+        </p>
+        <ul>
+          <li>🃏 Interactive Polar Flashcards</li>
+          <li>🎯 Station Map Quiz (8 Rounds)</li>
+          <li>🧠 12-question quiz & certificates</li>
+          <li>☀️ Interactive Ice-Albedo Lab</li>
+          <li>🚀 8 Polar science career pathways</li>
+          <li>📥 Instant study notes download</li>
+        </ul>
+        <button onclick="openPortal('Student')">
+          Enter Student Portal →
+        </button>
+      </div>
+
+      <!-- TEACHER -->
+      <div class="portal-card teacher-portal">
+        <div class="portal-icon">👨‍🏫</div>
+        <span class="portal-label">FOR TEACHERS</span>
+        <h3>Teacher Classroom</h3>
+        <p>
+          Access ready-to-use teaching resources, standards-aligned
+          curricula, experiments, and assessment rubrics.
+        </p>
+        <ul>
+          <li>📖 6 Standards-aligned lesson plans</li>
+          <li>🧪 Hands-on Archimedes melting experiments</li>
+          <li>🔬 Salinity & albedo lab protocols</li>
+          <li>📝 Printable lab worksheets</li>
+          <li>📥 Instant lesson pack downloads (.TXT)</li>
+          <li>✅ Classroom map quiz challenges</li>
+        </ul>
+        <button onclick="openPortal('Teacher')">
+          Enter Teacher Portal →
+        </button>
+      </div>
+
+      <!-- SCIENTIST -->
+      <div class="portal-card scientist-portal">
+        <div class="portal-icon">🔬</div>
+        <span class="portal-label">FOR SCIENTISTS</span>
+        <h3>Research Hub</h3>
+        <p>
+          Explore research datasets, time-series graphs,
+          expedition logs, and contribute peer findings.
+        </p>
+        <ul>
+          <li>🔬 20 peer-reviewed research papers</li>
+          <li>📊 8 interactive time-series datasets & charts</li>
+          <li>📥 Instant raw CSV dataset export</li>
+          <li>📄 Automated citations & DOI integration</li>
+          <li>📡 Polar instrument & sensor registry</li>
+          <li>📤 Community research paper submission</li>
+        </ul>
+        <button onclick="openPortal('Scientist')">
+          Enter Research Hub →
+        </button>
+      </div>
+
+      <!-- PUBLIC -->
+      <div class="portal-card public-portal">
+        <div class="portal-icon">🌍</div>
+        <span class="portal-label">FOR EVERYONE</span>
+        <h3>Public Explorer</h3>
+        <p>
+          Discover polar science through stories, videos,
+          daily facts, visual content and simple explanations.
+        </p>
+        <ul>
+          <li>🌎 Interactive polar fact generator (25 facts)</li>
+          <li>📰 8 science expedition stories & news</li>
+          <li>🎥 Embedded documentary videos</li>
+          <li>📸 8 high-resolution polar photos with lightbox</li>
+          <li>🗺️ Interactive station exploration</li>
+        </ul>
+        <button onclick="openPortal('Public')">
+          Enter Public Explorer →
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= MEDIA ================= -->
+  <section class="section" id="media">
+    <div class="section-title">
+      <p>MEDIA & STORIES</p>
+      <h2>Discover Polar Stories</h2>
+      <span>
+        Explore science, people and discoveries from
+        the world's frozen regions.
+      </span>
+    </div>
+
+    <div class="media-grid">
+      <div class="media-card" onclick="openPortal('Public')">
+        <span>📰</span>
+        <h3>Polar News</h3>
+        <p>
+          Discover developments and scientific breakthroughs from Arctic and Antarctic expeditions.
+        </p>
+      </div>
+
+      <div class="media-card" onclick="stationInfo('Dakshin Gangotri')">
+        <span>🚢</span>
+        <h3>Expedition Stories</h3>
+        <p>
+          Follow historic journeys from the first 1983 mission to modern satellite ground operations at Bharati.
+        </p>
+      </div>
+
+      <div class="media-card" onclick="openPortal('Public')">
+        <span>📸</span>
+        <h3>Polar Gallery</h3>
+        <p>
+          Explore high-definition imagery of research stations, aurora australis, and tidewater glaciers.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= STUDENT ZONE ================= -->
+  <section class="section student-zone" id="students">
+    <div class="section-title">
+      <p>STUDENT ZONE</p>
+      <h2>Learn. Explore. Discover.</h2>
+    </div>
+
+    <div class="student-grid" style="grid-template-columns: repeat(4, 1fr);">
+      <div onclick="openFlashcardsModal()">
+        <span>🃏</span>
+        <h3>Study Flashcards</h3>
+        <p>
+          Master 16 core polar science concepts with 3D flip cards!
+        </p>
+      </div>
+
+      <div onclick="startStationQuiz()">
+        <span>🎯</span>
+        <h3>Station Map Quiz</h3>
+        <p>
+          Find Himadri, Maitri, Bharati & Himansh on the map (8 Rounds)!
+        </p>
+      </div>
+
+      <div onclick="startQuiz()">
+        <span>🧠</span>
+        <h3>Polar Quiz</h3>
+        <p>
+          12 challenge questions with certificates and ranks!
+        </p>
+      </div>
+
+      <div onclick="showCareerModal()">
+        <span>🚀</span>
+        <h3>Careers Guide</h3>
+        <p>
+          Explore 8 career pathways in polar science & engineering.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= AI ASSISTANT ================= -->
+  <section class="ai-section" id="ai">
+    <div class="ai-box">
+      <div class="ai-icon cryo-glow">
+        ❄️
+      </div>
+      <p class="tag">CRYO AI • POLAR INTELLIGENCE</p>
+      <h2>Ask Cryo AI About Polar Science</h2>
+      <p>
+        Ask Cryo AI anything about the Arctic & Antarctica, research stations (Vostok, McMurdo, Amundsen-Scott, Concordia, Svalbard, Himadri, Maitri, Bharati), 800,000-year ice-core $CO_2$ records, glacier melt dynamics, and space weather auroras.
+      </p>
+
+      <!-- Suggested Question Prompt Chips -->
+      <div class="ai-chips-wrapper">
+        <span class="ai-chip cryo-highlight-chip" onclick="window.cryoAI.togglePanel()">❄️ Open Floating Cryo AI</span>
+        <span class="ai-chip" onclick="document.getElementById('aiQuestion').value='What is the coldest temperature recorded at Vostok Station?'; askAI();">❄️ Coldest Temp at Vostok Station?</span>
+        <span class="ai-chip" onclick="document.getElementById('aiQuestion').value='How do ice cores store ancient atmospheric data?'; askAI();">🧊 How Ice Cores Store CO2 Data?</span>
+        <span class="ai-chip" onclick="document.getElementById('aiQuestion').value='Tell me about McMurdo Station and Ross Island'; askAI();">🇺🇸 McMurdo Station</span>
+        <span class="ai-chip" onclick="document.getElementById('aiQuestion').value='Tell me about Himadri station'; askAI();">🇮🇳 Himadri Station</span>
+        <span class="ai-chip" onclick="document.getElementById('aiQuestion').value='What are the polar sea-ice extent trends from 1979 to 2024?'; askAI();">📉 Sea-Ice Trends (1979-2024)</span>
+        <span class="ai-chip" onclick="document.getElementById('aiQuestion').value='What causes auroras and why are they green and red?'; askAI();">🌌 Aurora Dynamics</span>
+        <span class="ai-chip" onclick="document.getElementById('aiQuestion').value='Why is Antarctica colder than the Arctic?'; askAI();">⚖️ Arctic vs Antarctica</span>
+        <span class="ai-chip" onclick="startStationQuiz()">🎯 Station Map Quiz</span>
+        <span class="ai-chip" onclick="openGlossaryModal()">📚 A-Z Polar Glossary</span>
+      </div>
+
+      <div class="ai-input">
+        <input
+          id="aiQuestion"
+          type="text"
+          placeholder="Ask Cryo AI anything (e.g. What is the coldest temperature at Vostok?)..."
+          onkeydown="if(event.key==='Enter') askAI()"
+        >
+        <button onclick="askAI()">
+          Ask Cryo AI
+        </button>
+      </div>
+
+      <div id="aiAnswer" class="ai-answer">
+        <!-- AI Answers will be dynamically populated here with zero latency -->
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= FOOTER ================= -->
+  <footer>
+    <div class="logo"><span class="logo-icon">❄️</span><span class="logo-text">CRYO<span>VERSE</span></span></div>
+    <p>
+      Explore • Learn • Research • Discover the Frozen World
+    </p>
+    <small>
+      Cryoverse • Polar Science & Smart Education Platform • Developed for Antarctic & Arctic Science Education
+    </small>
+  </footer>
+
+  <!-- ================= EXTERNAL SCRIPTS & LIBRARIES ================= -->
+  <!-- Leaflet JS for Maps -->
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+  
+  <!-- Chart.js for Scientist Portal Datasets -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+  <!-- Cryoverse Modular Logic -->
+  <script src="data.js"></script>
+  <script src="database.js"></script>
+  <script src="polar_qa.js"></script>
+  <script src="map.js"></script>
+  <script src="ai.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
